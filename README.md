@@ -1,4 +1,4 @@
-# Remote All
+# RemoteFor
 - Image and short bio of project
 - OR Demo GIF and bio
 

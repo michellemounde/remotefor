@@ -25,7 +25,7 @@ const { doubleCsrfProtection } =
   doubleCsrf({
     // The only required option is getSecret, the rest have sensible defaults (shown below) other than cookieOptions edited as per AAO
     getSecret: (req) => req.secret,
-    cookieName: isProduction && '__Host-remote-all.X-CSRF-Token' || 'Remote-All.X-CSRF-Token', // The name of the cookie to be used, recommend using `__Host-` prefix.
+    cookieName: isProduction && '__Host-remotefor.X-CSRF-Token' || 'RemoteFor.X-CSRF-Token', // The name of the cookie to be used, recommend using `__Host-` prefix.
     cookieOptions: {
       httpOnly: true,
       sameSite: isProduction && 'Strict', // Recommend you make this strict if possible

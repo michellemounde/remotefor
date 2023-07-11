@@ -24,7 +24,7 @@ function App() {
         <Switch>
        </Switch>
       )}
-      <h1>Remote All</h1>
+      <h1>RemoteFor</h1>
     </>
   );
 }
