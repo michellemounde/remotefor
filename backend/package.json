@@ -28,6 +28,7 @@
     "morgan": "^1.10.0",
     "per-env": "^1.0.2",
     "pg": "^8.10.0",
+    "puppeteer": "^20.9.0",
     "sequelize": "^6.31.0",
     "sequelize-cli": "^6.6.0"
   },
