@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import ProfileButton from './ProfileButton';
+import Home from '../Home';
 
 import './Navigation.css';
 
@@ -11,7 +12,7 @@ const Navigation = ({ isLoaded }) => {
   return (
     <nav>
       <ul>
-        <li><NavLink activeClassName='active' to='/' exact>Home</NavLink></li>
+        <li><NavLink activeClassName='active' to='/' exact>{Home}</NavLink></li>
         {isLoaded && (
           <li><ProfileButton user={user} /></li>
         )}

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import sessionReducer from './session';
+import jobsReducer from './jobs';
 
 const rootReducer = ({
-  session: sessionReducer
+  session: sessionReducer,
+  jobs: jobsReducer
 });
 
 const preloadedState = {};

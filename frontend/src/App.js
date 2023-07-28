@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 
 import Navigation from './components/Navigation';
+import Home from './components/Home';
 
 import * as sessionActions from './store/session';
 
@@ -22,6 +23,7 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route path='/' exact component={Home}></Route>
        </Switch>
       )}
       <h1>RemoteFor</h1>
