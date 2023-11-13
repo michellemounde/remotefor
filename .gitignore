@@ -300,5 +300,5 @@ cython_debug/
 #.idea/
 
 
-# Planning files
-planning.md
+# Design files
+design/
