@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { scraper } = require('../../utils/scrapers/scraper');
+// const { scraper } = require('../../utils/scrapers/scraper');
 
 // Get all jobs
 // GET /api/jobs

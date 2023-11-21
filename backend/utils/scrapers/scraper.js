@@ -81,6 +81,6 @@ const jobsScraper = async () => {
   return jobs;
 };
 
-// TODO - COmment back in Scrape every 24 hours
+// TODO - Comment back in to scrape every 24 hours
 // setInterval(jobsScraper, 1000 * 60 * 60 * 24)
 jobsScraper();

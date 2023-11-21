@@ -58,7 +58,7 @@ const SignupFormModal = () => {
             required
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            />
+          />
         </label>
 
         {errors.lastName && <p>{errors.lastName}</p>}
@@ -70,7 +70,7 @@ const SignupFormModal = () => {
             required
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            />
+          />
         </label>
 
         {errors.username && <p>{errors.username}</p>}
@@ -82,7 +82,7 @@ const SignupFormModal = () => {
             required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            />
+          />
         </label>
 
         {errors.email && <p>{errors.email}</p>}
@@ -94,7 +94,7 @@ const SignupFormModal = () => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            />
+          />
         </label>
 
         {errors.password && <p>{errors.password}</p>}
@@ -106,7 +106,7 @@ const SignupFormModal = () => {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            />
+          />
         </label>
 
         {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
@@ -118,7 +118,7 @@ const SignupFormModal = () => {
             required
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            />
+          />
         </label>
 
         <button type='submit'>Sign Up</button>
