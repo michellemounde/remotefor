@@ -10,8 +10,8 @@
     "start": "per-env",
     "start:development": "nodemon ./bin/www",
     "start:production": "node ./bin/www",
-    "lint": "eslint . --ext .jsx,.js",
-    "lint:fix": "eslint . --fix --ext .jsx,.js"
+    "lint": "eslint . --config .eslintrc.dev.js --ext .jsx,.js",
+    "lint:fix": "eslint . --fix --config .eslintrc.dev.js --ext .jsx,.js"
   },
   "keywords": [],
   "author": "",
