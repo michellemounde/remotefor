@@ -78,7 +78,7 @@ export const restoreUser = () => async (dispatch) => {
 
 const initialState = { user: null };
 
-const sessionReducer = (action, state = initialState) => {
+const sessionReducer = (state = initialState, action) => {
   const nextState = { ...state };
 
   switch (action.type) {

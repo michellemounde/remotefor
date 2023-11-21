@@ -19,7 +19,7 @@ export const getAllJobs = () => async (dispatch) => {
 
 const initialState = { jobs: null };
 
-const sessionReducer = (action, state = initialState) => {
+const sessionReducer = (state = initialState, action) => {
   const nextState = { ...state };
 
   switch (action.type) {
