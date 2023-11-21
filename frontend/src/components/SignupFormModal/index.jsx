@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import * as sessionActions from '../../store/session';
@@ -28,22 +28,21 @@ const SignupFormModal = () => {
         lastName,
         username,
         email,
-        password
-      }
+        password,
+      };
 
       return dispatch(sessionActions.signup(payload))
         .then(closeModal)
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
-        })
+        });
     }
 
     return setErrors({
-      confirmPassword: 'Confirm Password field must be the same as the password field'
-    })
-
-  }
+      confirmPassword: 'Confirm Password field must be the same as the password field',
+    });
+  };
 
   return (
     <>
@@ -125,7 +124,7 @@ const SignupFormModal = () => {
         <button type='submit'>Sign Up</button>
       </form>
     </>
-  )
-}
+  );
+};
 
 export default SignupFormModal;

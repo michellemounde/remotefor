@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 
@@ -23,8 +23,8 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path='/' exact component={Home}></Route>
-       </Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
       )}
       <h1>RemoteFor</h1>
     </>

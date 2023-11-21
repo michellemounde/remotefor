@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import * as sessionActions from '../../store/session';
@@ -20,16 +20,16 @@ const LoginFormModal = () => {
 
     const payload = {
       credential,
-      password
-    }
+      password,
+    };
 
     return dispatch(sessionActions.login(payload))
       .then(closeModal)
       .catch(async (res) => {
         const data = await res.json();
-        if (data && data.errors) setErrors(data.errors)
-      })
-  }
+        if (data && data.errors) setErrors(data.errors);
+      });
+  };
 
   return (
     <>
@@ -60,7 +60,7 @@ const LoginFormModal = () => {
       </form>
     </>
 
-  )
-}
+  );
+};
 
 export default LoginFormModal;

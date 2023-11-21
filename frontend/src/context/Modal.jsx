@@ -1,4 +1,4 @@
-import React, {useRef, useState, useContext} from 'react';
+import React, { useRef, useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import './Modal.css';
@@ -18,7 +18,7 @@ export const ModalProvider = ({ children }) => {
       onModalClose();
       setOnModalClose(null);
     }
-  }
+  };
 
   const contextValue = {
     modalRef, // reference to modal div
@@ -26,7 +26,7 @@ export const ModalProvider = ({ children }) => {
     setModalContent, // function to set the React component to render inside modal
     setOnModalClose, // function to set the callback function to be called when modal is closing
     closeModal, // function to close the modal
-  }
+  };
 
   return (
     <>
@@ -35,8 +35,8 @@ export const ModalProvider = ({ children }) => {
       </ModalContext.Provider>
       <div ref={modalRef}></div>
     </>
-  )
-}
+  );
+};
 
 export const Modal = () => {
   const { modalRef, modalContent, closeModal } = useContext(ModalContext);
@@ -48,8 +48,8 @@ export const Modal = () => {
       <div id='modal-background' onClick={closeModal}></div>
       <div id='modal-content'>{modalContent}</div>
     </div>,
-    modalRef.current
-  )
-}
+    modalRef.current,
+  );
+};
 
 export const useModal = () => useContext(ModalContext);

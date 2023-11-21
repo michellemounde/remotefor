@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ import Home from '../Home';
 import './Navigation.css';
 
 const Navigation = ({ isLoaded }) => {
-  const user = useSelector(state => state.session.user);
+  const user = useSelector((state) => state.session.user);
 
   return (
     <nav>
@@ -18,7 +19,7 @@ const Navigation = ({ isLoaded }) => {
         )}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
 export default Navigation;

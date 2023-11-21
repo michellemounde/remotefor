@@ -2,14 +2,13 @@ const express = require('express');
 const { Op } = require('sequelize');
 const bcrypt = require('bcryptjs');
 
+const { check } = require('express-validator');
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
 
-const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const router = express.Router();
-
 
 const validateLogin = [
   check('credential')
@@ -19,7 +18,7 @@ const validateLogin = [
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a password.'),
-  handleValidationErrors
+  handleValidationErrors,
 ];
 
 // Log in
@@ -34,9 +33,9 @@ router.post(
       where: {
         [Op.or]: {
           username: credential,
-          email: credential
-        }
-      }
+          email: credential,
+        },
+      },
     });
 
     if (!user || !bcrypt.compareSync(password, user.hashedPassword.toString())) {
@@ -52,15 +51,14 @@ router.post(
       email: user.email,
       username: user.username,
       firstName: user.firstName,
-      lastName: user.lastName
-    }
+      lastName: user.lastName,
+    };
 
     await setTokenCookie(res, safeUser);
 
-    return res.json({ user: safeUser })
-  }
-)
-
+    return res.json({ user: safeUser });
+  },
+);
 
 // Log out
 // DELETE /api/session
@@ -69,9 +67,8 @@ router.delete(
   (_req, res) => {
     res.clearCookie('token');
     return res.json({ message: 'success' });
-  }
-)
-
+  },
+);
 
 // Restore session user
 // GET /api/session
@@ -86,15 +83,12 @@ router.get(
         email: user.email,
         username: user.username,
         firstName: user.firstName,
-        lastName: user.lastName
-      }
-      return res.json({ user: safeUser })
-    } else {
-      return res.json({ user: null })
+        lastName: user.lastName,
+      };
+      return res.json({ user: safeUser });
     }
-  }
-)
-
-
+    return res.json({ user: null });
+  },
+);
 
 module.exports = router;
